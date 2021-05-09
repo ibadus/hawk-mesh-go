@@ -26,7 +26,7 @@ url := "https://prod.jdgroupmesh.cloud/stores/jdsportsfr/" + "..."
 
 headers, err := hawk.GenerateHeaders("GET", url, key, secret)
 if err != nil {
-	return err, nil
+	return err
 }
 hawkHeader := map[string]string{"X-Request-Auth": headers}
 ```
