@@ -62,7 +62,7 @@ if err != nil {
 }
 hawkHeader := map[string]string{"X-Request-Auth": headers}
 ```
-#### Let's test this
+#### Let's test
 ```go
 package main
 
