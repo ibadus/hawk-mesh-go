@@ -81,6 +81,6 @@ func main() {
 	if err != nil {
 		return
 	}
-	fmt.Println("X-Request-Auth: ", headers)
+	fmt.Println("X-Request-Auth:", headers)
 }
 ```
