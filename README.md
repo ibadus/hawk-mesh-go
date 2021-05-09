@@ -26,7 +26,7 @@ url := "https://prod.jdgroupmesh.cloud/stores/jdsportsfr/" + "..."
 
 headers, err := hawk.GenerateHeaders("GET", url, key, secret)
 if err != nil {
-	return err, nil
+	return
 }
 hawkHeader := map[string]string{"X-Request-Auth": headers}
 ```
@@ -42,7 +42,7 @@ payload := []byte(fmt.Sprintf(`
 
 headers, err := hawk.GenerateHeadersWithPayload("POST", url, key, secret, string(payload))
 if err != nil {
-	return err
+	return
 }
 hawkHeader := map[string]string{"X-Request-Auth": headers}
 ```
@@ -58,7 +58,29 @@ payload := []byte(fmt.Sprintf(`
 
 headers, err := hawk.GenerateHeadersWithPayload("PUT", url, key, secret, string(payload))
 if err != nil {
-	return err
+	return
 }
 hawkHeader := map[string]string{"X-Request-Auth": headers}
+```
+#### Let's test
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/ibadus/hawk-mesh-go"
+)
+
+func main() {
+	fmt.Println("Let's try")
+	key := "f2188a5b06"
+	secret := "8bb6bd51c83f2ec9821e1bda5c77b25b"
+	url := "https://prod.jdgroupmesh.cloud/stores/jdsportsfr/"
+
+	headers, err := hawk.GenerateHeaders("GET", url, key, secret)
+	if err != nil {
+		return
+	}
+	fmt.Println("X-Request-Auth:", headers)
+}
 ```
