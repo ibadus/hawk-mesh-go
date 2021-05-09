@@ -72,7 +72,7 @@ import (
 )
 
 func main() {
-	fmt.Println("Hello, playground")
+	fmt.Println("Let's try")
 	key := "f2188a5b06"
 	secret := "8bb6bd51c83f2ec9821e1bda5c77b25b"
 	url := "https://prod.jdgroupmesh.cloud/stores/jdsportsfr/"
