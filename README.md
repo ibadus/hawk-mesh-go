@@ -26,7 +26,7 @@ url := "https://prod.jdgroupmesh.cloud/stores/jdsportsfr/" + "..."
 
 headers, err := hawk.GenerateHeaders("GET", url, key, secret)
 if err != nil {
-	return err
+	return
 }
 hawkHeader := map[string]string{"X-Request-Auth": headers}
 ```
@@ -42,7 +42,7 @@ payload := []byte(fmt.Sprintf(`
 
 headers, err := hawk.GenerateHeadersWithPayload("POST", url, key, secret, string(payload))
 if err != nil {
-	return err
+	return
 }
 hawkHeader := map[string]string{"X-Request-Auth": headers}
 ```
@@ -58,7 +58,7 @@ payload := []byte(fmt.Sprintf(`
 
 headers, err := hawk.GenerateHeadersWithPayload("PUT", url, key, secret, string(payload))
 if err != nil {
-	return err
+	return
 }
 hawkHeader := map[string]string{"X-Request-Auth": headers}
 ```
