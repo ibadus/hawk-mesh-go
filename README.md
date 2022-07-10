@@ -1,4 +1,9 @@
 # hawk mesh go 🌟
+
+```
+status: working ✅
+```
+
 ## 💬 Description 
  Wrapper to easily generate "X-Request-Auth" header for Mesh sites in golang. Based on [hawk-go](https://github.com/tent/hawk-go).
 
